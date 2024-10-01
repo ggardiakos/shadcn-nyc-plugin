@@ -1,4 +1,4 @@
-// shadcn-plugin.js
+// plugin.bundle.js
 (function() {
   var plugin = {
     name: 'shadcn-components',
