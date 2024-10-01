@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:plugin": "webpack --config webpack.config.js"
   },
   "dependencies": {
     "@builder.io/plugin-tools": "^0.0.4",
@@ -73,6 +74,7 @@
     "ts-loader": "^9.5.1",
     "typescript": "^5",
     "webpack": "^5.95.0",
+    "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^5.1.4"
   }
 }

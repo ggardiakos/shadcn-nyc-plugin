@@ -10,7 +10,7 @@
     "target": "ES5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -20,8 +20,8 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "types": ["node"]
+    "noEmit": false,
+    "types": ["node", "react"]
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

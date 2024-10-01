@@ -1,46 +1,8 @@
-// shadcn-plugin.js
+import { Builder } from '@builder.io/react';
+import * as ShadcnComponents from './components/ui';
 
-(function() {
-  const shadcnComponents = [
-    'Accordion',
-    'AlertDialog',
-    'AspectRatio',
-    'Avatar',
-    'Badge',
-    'Button',
-    'Calendar',
-    'Card',
-    'Checkbox',
-    'Collapsible',
-    'Command',
-    'ContextMenu',
-    'Dialog',
-    'DropdownMenu',
-    'Form',
-    'HoverCard',
-    'Input',
-    'Label',
-    'Menubar',
-    'NavigationMenu',
-    'Popover',
-    'Progress',
-    'RadioGroup',
-    'ScrollArea',
-    'Select',
-    'Separator',
-    'Sheet',
-    'Skeleton',
-    'Slider',
-    'Switch',
-    'Table',
-    'Tabs',
-    'Textarea',
-    'Toast',
-    'Toggle',
-    'Tooltip'
-  ];
-
-  const componentList = shadcnComponents.map(name => ({
+Object.entries(ShadcnComponents).forEach(([name, Component]) => {
+  Builder.registerComponent(Component, {
     name: `Shadcn${name}`,
     inputs: [
       {
@@ -49,23 +11,14 @@
         defaultValue: '',
         helperText: 'Custom CSS class names'
       },
-      // Add more common inputs here if needed
+      // Add more inputs as needed for each component
     ],
-    // You can add more properties here as needed, such as image, description, etc.
-  }));
+  });
+});
 
-  const ShadcnPlugin = {
-    name: 'shadcn-components',
-    id: 'shadcn-components-plugin',
-    settings: {
-      components: componentList
-    }
-  };
+export const ShadcnPlugin = {
+  name: 'shadcn-components',
+  id: 'shadcn-components-plugin',
+};
 
-  // Register the plugin with Builder.io
-  if (typeof Builder !== 'undefined') {
-    Builder.registerPlugin(ShadcnPlugin);
-  } else {
-    console.warn('Builder is not defined. Make sure this script is loaded after Builder.');
-  }
-})();
+export default ShadcnPlugin;
